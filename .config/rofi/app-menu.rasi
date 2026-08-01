@@ -1,0 +1,123 @@
+/* Power menu */
+
+* {
+  rosewater: #f2d5cf;
+  flamingo: #eebebe;
+  pink: #f4b8e4;
+  mauve: #ca9ee6;
+  red: #e78284;
+  maroon: #ea999c;
+  peach: #ef9f76;
+  yellow: #e5c890;
+  green: #a6d189;
+  teal: #81c8be;
+  sky: #99d1db;
+  sapphire: #85c1dc;
+  blue: #8caaee;
+  lavender: #babbf1;
+  text: #c6d0f5;
+  subtext1: #b5bfe2;
+  subtext0: #a5adce;
+  overlay2: #949cbb;
+  overlay1: #838ba7;
+  overlay0: #737994;
+  surface2: #626880;
+  surface1: #51576d;
+  surface0: #414559;
+  base: #303446;
+  mantle: #292c3c;
+  crust: #232634;
+
+  main-bg: @base;
+  selected-bg: @surface0;
+  main-fg: @text;
+  main-br: @mauve;
+
+  alternate-normal-background: @main-bg;
+  background: @main-bg;
+  foreground: @main-fg;
+  selected-background: @selected-bg;
+  selected-normal-background: @selected-bg;
+}
+
+configuration {
+  font: "JetBrainsMono Nerd Font Bold 14";
+  hover-select: true;
+  me-select-entry: "MousePrimary";
+  me-accept-entry: "!MousePrimary";
+  show-icons: true;
+  display-drun: " ";
+}
+
+window {
+  location: center;
+  anchor: center;
+  border: 1px;
+  border-radius: 0px;
+  border-color: @main-br;
+  background-color: @main-bg;
+  children: [ mainbox ];
+  padding: 8px;
+}
+
+mainbox {
+  children: [ inputbar, listview ];
+  orientation: vertical;
+  spacing: 6px;
+}
+
+inputbar {
+  children: [ entry ];
+  padding: 0px;
+}
+
+entry {
+  padding: 4px 8px;
+  background-color: @surface0;
+  text-color: @main-fg;
+  border: 1px;
+  border-color: @main-br;
+  border-radius: 0px;
+  font: "JetBrainsMono Nerd Font 14";
+}
+
+listview {
+  border: none;
+  lines: 7;
+  columns: 3;
+  scrollbar: false;
+  background-color: transparent;
+  spacing: 2px;
+}
+
+element {
+  padding: 4px 4px;
+  border-radius: 0px;
+  background-color: transparent;
+  text-color: @main-fg;
+  font: "JetBrainsMono Nerd Font 13";
+}
+
+element selected {
+  background-color: @selected-bg;
+  text-color: @mauve;
+  border: 1px;
+  border-color: @mauve;
+}
+
+element-text {
+  text-color: inherit;
+  padding-left: 2px;
+  font: "JetBrainsMono Nerd Font 13";
+}
+
+element-icon {
+  size: 20px;
+  padding-right: 2px;
+}
+
+scrollbar {
+  handle-color: @mauve;
+  handle-width: 4px;
+  border-radius: 0px;
+}

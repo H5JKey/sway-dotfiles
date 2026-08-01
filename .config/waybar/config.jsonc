@@ -1,0 +1,70 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 3,
+    "spacing": 0,
+    "modules-left": ["custom/launcher","custom/separator","sway/workspaces", "custom/separator"],
+    "modules-center": ["clock"],
+    "modules-right": ["custom/separator", "sway/language","custom/separator", "battery","custom/separator","temperature"],
+
+    "custom/separator": {
+        "format": "|",
+        "tooltip": false
+     },
+
+     "custom/launcher": {
+	"format": "⬛ ⬛\n⬛ ⬛",
+	"tooltip": false,
+	"on-click": "~/.config/waybar/scripts/show-app-menu.sh"
+     },
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5"
+        },
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        }
+    },
+    "clock": {
+	"tooltip": false,
+	"format": "{:%H:%M  %a %d %b}",
+	"interval": 60
+      },
+    "battery": {
+      	"bat": "BAT1",
+      	"interval": 60,
+      	"format": "{icon} {capacity}%",
+        "format-icons": [
+		"<span></span>",
+		"<span></span>",
+		"<span></span>",
+		"<span></span>",
+		"<span></span>"
+	]
+    },
+    "sway/language": {
+        "tooltip": true,
+        "format": " {}",
+	"format-ru": "RU",
+	"format-en": "US"
+    },
+    "temperature": {
+	"thermal-zone": 2,
+	"hwmon-path": ["/sys/class/hwmon/hwmon2/temp1_input", "/sys/class/thermal/thermal_zone0/temp"],
+	"critical-threshold": 80,
+	"format-critical": " {temperatureC}°C",
+	"format": " {temperatureC}°C"
+     }
+} 

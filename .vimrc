@@ -1,0 +1,9 @@
+call plug#begin()
+
+" List your plugins here
+Plug 'tpope/vim-sensible'
+Plug 'catppuccin/vim', { 'as': 'catppuccin', 'branch': 'main' }
+
+call plug#end()
+
+set termguicolors
